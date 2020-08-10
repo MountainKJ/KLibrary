@@ -1,0 +1,3 @@
+include ':kcore'
+include ':app'
+rootProject.name = "KLibrary"

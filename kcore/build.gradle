@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    api rootProject.ext.androidxs
+    api rootProject.ext.denpendencies.recycleView
+    api rootProject.ext.denpendencies.utilCodex
+    api rootProject.ext.denpendencies.permission
+    api rootProject.ext.denpendencies.eventBus
+    api rootProject.ext.denpendencies["quick-adapter"]
+    api rootProject.ext.denpendencies["material-dialogs-core"]
+    api rootProject.ext.denpendencies["material-dialogs-lifecycle"]
+
+}

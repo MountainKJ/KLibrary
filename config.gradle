@@ -1,0 +1,38 @@
+ext{
+
+    android = [
+            minSdkVersion                   : 21,
+            targetSdkVersion                : 29,
+            compileSdkVersion               : 29,
+            buildToolsSdkVersion            : "29.0.2"
+    ]
+
+    versions = [
+            lifecycle_version               : "2.2.0"
+    ]
+
+    androidx = [
+            appcompat                       : "androidx.appcompat:appcompat:1.2.0",
+            'core-ktx'                      : "androidx.core:core-ktx:1.3.1",
+            constraintLayout                : "androidx.constraintlayout:constraintlayout:1.1.3",
+            annotation                      : "androidx.annotation:annotation:1.1.0",
+            // ViewModel
+            'viewmodel-ktx'                 : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions["lifecycle_version"]}",
+            // LiveData
+            'livedata-ktx'                  : "androidx.lifecycle:lifecycle-livedata-ktx:${versions["lifecycle_version"]}"
+    ]
+
+    denpendencies = [
+            recycleView                     : "androidx.recyclerview:recyclerview:1.1.0",
+            utilCodex                       : "com.blankj:utilcodex:1.29.0",
+            eventBus                        : "org.greenrobot:eventbus:3.2.0",
+            permission                      : "pub.devrel:easypermissions:3.0.0",
+            "quick-adapter"                 : "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4",
+
+            "material-dialogs-core"         : "com.afollestad.material-dialogs:core:3.1.1",
+            "material-dialogs-lifecycle"    : "com.afollestad.material-dialogs:lifecycle:3.1.1"
+    ]
+
+
+    androidxs = androidx.values()
+}
