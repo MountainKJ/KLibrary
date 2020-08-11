@@ -22,6 +22,9 @@ abstract class BaseActivity<VM: BaseViewModel>: AppCompatActivity(), EasyPermiss
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        if(getContentView() != -1) {
+            setContentView(getContentView())
+        }
         checkRegisterEventBus()
         createViewModel()
     }

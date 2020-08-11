@@ -8,7 +8,8 @@ ext{
     ]
 
     versions = [
-            lifecycle_version               : "2.2.0"
+            lifecycle_version               : "2.2.0",
+            room_version                    : "2.2.5"
     ]
 
     androidx = [
@@ -33,6 +34,11 @@ ext{
             "material-dialogs-lifecycle"    : "com.afollestad.material-dialogs:lifecycle:3.1.1"
     ]
 
+    room = [
+            "room-runtime"                  : "androidx.room:room-runtime:${versions["room_version"]}",
+            "room-ktx"                      : "androidx.room:room-ktx:${versions["room_version"]}",
+            "room-compiler"                 : "androidx.room:room-compiler:${versions["room_version"]}"
+    ]
 
     androidxs = androidx.values()
 }
