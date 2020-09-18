@@ -23,6 +23,7 @@ class RoomLearnActivity : SupperActivity<NoViewModel>(), View.OnClickListener {
 
     override fun getContentViewV(): View {
         mBinding = ActivityRoomLearnBinding.inflate(layoutInflater)
+
         return mBinding.root
     }
 
@@ -39,10 +40,21 @@ class RoomLearnActivity : SupperActivity<NoViewModel>(), View.OnClickListener {
 
     override fun onClick(v: View?) = when(v) {
         mBinding.activityRoomLearnInsertTv -> insertUser()
-        mBinding.activityRoomLearnDeleteTv -> {}
+        mBinding.activityRoomLearnDeleteTv -> deleteUser()
         mBinding.activityRoomLearnUpdateTv -> {}
         mBinding.activityRoomLearnQueryTv -> {}
         else -> {}
+    }
+
+    private fun deleteUser() {
+        launchStart({
+            RoomHelper.get().db.userDao().loadAllByIds(intArrayOf(1)).firstOrNull()?.let {
+                RoomHelper.get().db.userDao().delete(it)
+            }
+            true
+        }, {
+            notifyAdapterData()
+        })
     }
 
     private fun insertUser() {

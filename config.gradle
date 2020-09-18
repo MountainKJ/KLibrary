@@ -40,5 +40,9 @@ ext{
             "room-compiler"                 : "androidx.room:room-compiler:${versions["room_version"]}"
     ]
 
+    seldom = [
+            "app-startup"                   : "androidx.startup:startup-runtime:1.0.0-alpha03"
+    ]
+
     androidxs = androidx.values()
 }

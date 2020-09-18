@@ -38,6 +38,9 @@ dependencies {
     kapt rootProject.ext.room["room-compiler"]
     implementation rootProject.ext.room["room-ktx"]
 
+    //App-start-up
+    implementation rootProject.ext.seldom["app-startup"]
+
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

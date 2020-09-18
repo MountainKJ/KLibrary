@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.kj.klibrary">
 
     <application
@@ -17,6 +18,35 @@
             </intent-filter>
         </activity>
         <activity android:name=".room.RoomLearnActivity"/>
+        <activity android:name=".event.EventLearnActivity"/>
+        <activity android:name=".receiver.DPMTestActivity"/>
+
+        <receiver android:name=".receiver.DPMTestsReceiver"
+            android:description="@string/app_name"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data android:name="android.app.device_admin"
+                android:resource="@xml/device_admin"/>
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:exported="false"
+            android:authorities="${applicationId}.androidx-startup"
+            android:name="androidx.startup.InitializationProvider">
+            <meta-data
+                android:name="com.kj.klibrary.startup.TestLibraryA"
+                tools:node="remove"
+                android:value="androidx.startup"/>
+            <meta-data
+                android:name="com.kj.klibrary.startup.TestLibraryB"
+                android:value="androidx.startup"/>
+            <meta-data
+                android:name="com.kj.klibrary.startup.TestLibraryC"
+                android:value="androidx.startup"/>
+        </provider>
     </application>
 
 </manifest>
